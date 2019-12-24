@@ -9,10 +9,13 @@
 }
 */
 
+@import url('https://fonts.googleapis.com/css?family=Hanalei+Fill&display=swap');
+
 body {
     margin: 0;
     padding: 0;
     background-color: #000 !important;
+    font-family: 'Hanalei Fill', cursive;
     /*    font-family: monospace;*/
 }
 
@@ -191,9 +194,14 @@ canvas {
     z-index: 3;
 }
 
+#main-wrapper .centerLogo img {
+    width: 100px;
+    height: 54px;
+}
+
 #main-wrapper .centerLogo {
     position: absolute;
-    width: 50%;
+    width: 90%;
     padding: 10px;
     left: 50%;
     top: 50%;
@@ -211,7 +219,8 @@ canvas {
     font-size: 28px;
     font-weight: bolder;
     color: #fff;
-    font-family: fantasy;
+/*    font-family: fantasy;*/
+    font-family: 'Hanalei Fill', cursive;
     width: 50%;
     margin: 0;
     float: left;
@@ -264,7 +273,8 @@ canvas {
     display: flex;
 
     color: rgba(255, 255, 255, 0.2);
-    font-family: fantasy;
+/*    font-family: fantasy;*/
+    font-family: 'Hanalei Fill', cursive;
 
     border: 1px dashed rgba(255, 255, 255, 0.2);
 }
@@ -322,7 +332,8 @@ canvas {
     text-decoration: none;
     padding: 10px;
     font-size: 20px;
-    font-family: fantasy;
+/*    font-family: fantasy;*/
+    font-family: 'Hanalei Fill', cursive;
     z-index: 2;
 }
 
@@ -379,7 +390,8 @@ canvas {
     height: 100%;
     background-color: #000;
     color: #fff;
-    font-family: fantasy;
+/*    font-family: fantasy;*/
+    font-family: 'Hanalei Fill', cursive;
     display: inline-block;
 }
 
