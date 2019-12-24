@@ -512,3 +512,34 @@ function move(event) {
         });
 
 }
+
+function test(event) {
+    var originalBGplaypen = $("#mainMap").css("background-color"),
+        x, y, xy, bgWebKit, bgMoz,
+        lightColor = "rgba(255,255,255,0.75)",
+        gradientSize = getWidth() > 500 ? getWidth() / 620 * 50 : 75;
+
+    x = event.pageX - this.offsetLeft;
+    y = event.pageY - this.offsetTop;
+    xy = x + " " + y;
+
+    bgWebKit =
+        "-webkit-gradient(radial, " + xy + ", 0, " + xy + ", " + gradientSize +
+        ", from(" + lightColor +
+        "), to(rgba(255,255,255,0.0))), " +
+        originalBGplaypen;
+
+    bgMoz =
+        "-moz-radial-gradient(" + x + "px " + y + "px 45deg, circle, " +
+        lightColor + " 0%, " + originalBGplaypen +
+        " " + gradientSize + "px)";
+
+    $(this)
+        .css({
+            background: bgWebKit
+        })
+        .css({
+            background: bgMoz
+        });
+
+}
