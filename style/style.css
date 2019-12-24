@@ -95,6 +95,7 @@ canvas {
     padding: 10px;
     transform: translate(-50%, -50%);
     position: absolute;
+    z-index: 99999999;
 }
 
 #loadingScreen .center .circle {
@@ -158,6 +159,7 @@ canvas {
     position: absolute;
     background-color: #000;
     top: 0;
+    z-index: 99999999;
 }
 
 #loadingScreen .leftPart {
