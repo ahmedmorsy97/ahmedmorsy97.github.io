@@ -18,6 +18,8 @@ $(document).ready(function () {
             
             document.getElementById('tests').innerHTML = e.pageX;
             
+            document.getElementById('tests').innerHTML = 'testt';
+            
             x = e.pageX - this.offsetLeft;
             y = e.pageY - this.offsetTop;
             xy = x + " " + y;
