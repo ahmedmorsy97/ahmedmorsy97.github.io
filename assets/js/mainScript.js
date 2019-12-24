@@ -6,7 +6,50 @@ $(document).ready(function () {
 //        console.log("not a phone or tablet");
 //    }
 
+    if(document.getElementById('test') != null) {
+        var originalBGplaypen = $("#main-wrapper").css("background-color"),
+            x, y, xy, bgWebKit, bgMoz,
+            lightColor = "rgba(255,255,255,0.75)",
+            gradientSize = getWidth() > 500 ? getWidth() / 620 * 50 : 75;
+        $('#mainMap').css('height', getHeight() + 'px');
+        $('#mainMap').css('width', getWidth() + 'px');
+        
+        $('#mainMap').ontouchmove = function (e) {
+            
+            document.getElementById('tests').value = e;
+            
+            x = e.pageX - this.offsetLeft;
+            y = e.pageY - this.offsetTop;
+            xy = x + " " + y;
 
+            bgWebKit =
+                "-webkit-gradient(radial, " + xy + ", 0, " + xy + ", " + gradientSize +
+                ", from(" + lightColor +
+                "), to(rgba(255,255,255,0.0))), " +
+                originalBGplaypen;
+
+            bgMoz =
+                "-moz-radial-gradient(" + x + "px " + y + "px 45deg, circle, " +
+                lightColor + " 0%, " + originalBGplaypen +
+                " " + gradientSize + "px)";
+
+            $(this)
+                .css({
+                    background: bgWebKit
+                })
+                .css({
+                    background: bgMoz
+                });
+
+        };
+        $('#mainMap').ontouchend = function () {
+            $(this).css({
+                background: originalBGplaypen
+            });
+        };
+        
+       
+    }
 
     if (document.getElementById('main-wrapper') != null) {
         var originalBGplaypen = $("#main-wrapper").css("background-color"),
