@@ -483,6 +483,9 @@ window.addEventListener('load', function () {
 
 
 function move(event) {
+    
+    event.preventDefault();
+    
     var originalBGplaypen = $("#main-wrapper").css("background-color"),
         x, y, xy, bgWebKit, bgMoz,
         lightColor = "rgba(255,255,255,0.75)",
@@ -521,7 +524,7 @@ function test(event) {
     y = event.changedTouches[0].clientY - this.offsetTop;
     xy = x + " " + y;
     
-    document.getElementById('tests2').innerHTML = xy;
+    document.getElementById('tests2').innerHTML = x;
     document.getElementById('tests').innerHTML = 'yahooo';
 
     
