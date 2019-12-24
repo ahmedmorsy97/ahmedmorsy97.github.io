@@ -9,20 +9,41 @@ $(document).ready(function () {
     if(document.getElementById('test') != null) {
         
         $('#mainMap').addEventListener('touchstart', function(e){
+            e.preventDefault();
             
-            alert(e.changedTouches[0].pageX);
+            document.getElementById('tests2').innerHTML = e.changedTouches[0].clientX;
             
-            document.getElementById('tests').innerHTML = 'testt';
+            document.getElementById('tests').innerHTML = 'testt start';
             
-        }, false);
+        });
         
-//        document.body.addEventListener('touchstart', function(e){
-//            
-//            alert(e.changedTouches[0].pageX + 'hala');
-//            
-//            document.getElementById('tests').innerHTML = 'hahaha body';
-//            
-//        }, false);
+        $('#mainMap').addEventListener('touchmove', function(e){
+            e.preventDefault();
+            
+            document.getElementById('tests2').innerHTML = e.changedTouches[0].clientX;
+            
+            document.getElementById('tests').innerHTML = 'testt mpve';
+            
+        });
+        
+        $('#mainMap').addEventListener('touchend', function(e){
+            e.preventDefault();
+            
+            document.getElementById('tests2').innerHTML = e.changedTouches[0].clientX;
+            
+            document.getElementById('tests').innerHTML = 'testt end';
+            
+        });
+        
+        $('#mainMap').addEventListener('pointermove', function(e){
+            e.preventDefault();
+            
+            document.getElementById('tests2').innerHTML = e.changedTouches[0].clientX;
+            
+            document.getElementById('tests').innerHTML = 'pointer move';
+            
+        });
+        
         
         var originalBGplaypen = $("#mainMap").css("background-color"),
             x, y, xy, bgWebKit, bgMoz,
