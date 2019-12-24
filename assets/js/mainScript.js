@@ -1,15 +1,14 @@
 $(document).ready(function () {
 
-    if (mobileAndTabletcheck()) {
-        screen.orientation.lock("portrait-primary");
-    } else {
-        console.log("not a phone or tablet");
-    }
+//    if (mobileAndTabletcheck()) {
+//        screen.orientation.lock("portrait-primary");
+//    } else {
+//        console.log("not a phone or tablet");
+//    }
 
 
 
     if (document.getElementById('main-wrapper') != null) {
-
         var originalBGplaypen = $("#main-wrapper").css("background-color"),
             x, y, xy, bgWebKit, bgMoz,
             lightColor = "rgba(255,255,255,0.75)",
