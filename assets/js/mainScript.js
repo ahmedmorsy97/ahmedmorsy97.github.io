@@ -488,8 +488,8 @@ function move(event) {
         lightColor = "rgba(255,255,255,0.75)",
         gradientSize = getWidth() > 500 ? getWidth() / 620 * 50 : 75;
 
-    x = event.pageX - this.offsetLeft;
-    y = event.pageY - this.offsetTop;
+    x = event.changedTouches[0].clientX - this.offsetLeft;
+    y = event.changedTouches[0].clientY - this.offsetTop;
     xy = x + " " + y;
 
     bgWebKit =
@@ -514,17 +514,23 @@ function move(event) {
 }
 
 function test(event) {
+    
+    event.preventDefault();
+    
+    x = event.changedTouches[0].clientX - this.offsetLeft;
+    y = event.changedTouches[0].clientY - this.offsetTop;
+    xy = x + " " + y;
+    
+    document.getElementById('tests2').innerHTML = xy;
+    document.getElementById('tests').innerHTML = 'yahooo';
+
+    
+    
     var originalBGplaypen = $("#mainMap").css("background-color"),
         x, y, xy, bgWebKit, bgMoz,
         lightColor = "rgba(255,255,255,0.75)",
         gradientSize = getWidth() > 500 ? getWidth() / 620 * 50 : 75;
-
-    x = event.touches[0].clientX - this.offsetLeft;
-    y = event.touches[0].clientY - this.offsetTop;
-    xy = x + " " + y;
     
-    document.getElementById('tests2').innerHTML = xy;
-
     bgWebKit =
         "-webkit-gradient(radial, " + xy + ", 0, " + xy + ", " + gradientSize +
         ", from(" + lightColor +
