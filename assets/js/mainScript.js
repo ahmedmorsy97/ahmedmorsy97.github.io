@@ -7,7 +7,7 @@ $(document).ready(function () {
 //    }
 
     if(document.getElementById('test') != null) {
-        var originalBGplaypen = $("#main-wrapper").css("background-color"),
+        var originalBGplaypen = $("#mainMap").css("background-color"),
             x, y, xy, bgWebKit, bgMoz,
             lightColor = "rgba(255,255,255,0.75)",
             gradientSize = getWidth() > 500 ? getWidth() / 620 * 50 : 75;
@@ -16,7 +16,7 @@ $(document).ready(function () {
         
         $('#mainMap').ontouchmove = function (e) {
             
-            document.getElementById('tests').value = e;
+            document.getElementById('tests').innerHTML = e.pageX;
             
             x = e.pageX - this.offsetLeft;
             y = e.pageY - this.offsetTop;
@@ -47,7 +47,6 @@ $(document).ready(function () {
                 background: originalBGplaypen
             });
         };
-        
        
     }
 
