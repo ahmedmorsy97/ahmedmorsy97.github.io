@@ -1317,6 +1317,7 @@ canvas {
     left: 78%;
     bottom: -48px;
     transform: translateX(-49%) rotate3d(6, 1, 1, -77deg) skew(0deg, 6deg);
+    z-index: 10;
 }
 
 #mainMap .projector .light {
@@ -1466,6 +1467,7 @@ canvas {
     left: 0px;
     top: 0px;
     background-color: #000;
+    z-index: 10;
 }
 
 #mainMap .board .carousel__cell .btnHolder {
