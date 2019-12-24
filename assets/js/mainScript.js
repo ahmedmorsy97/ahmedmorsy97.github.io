@@ -529,7 +529,6 @@ function test(event) {
     document.getElementById('tests').innerHTML = event.changedTouches[0].clientX;
 
     
-    
     var originalBGplaypen = $("#mainMap").css("background-color"),
         x, y, xy, bgWebKit, bgMoz,
         lightColor = "rgba(255,255,255,0.75)",
