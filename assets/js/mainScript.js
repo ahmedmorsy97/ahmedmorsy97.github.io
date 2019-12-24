@@ -524,8 +524,9 @@ function test(event) {
     y = event.changedTouches[0].clientY - this.offsetTop;
     xy = x + " " + y;
     
+    document.getElementById('tests3').innerHTML = this.offsetLeft;
     document.getElementById('tests2').innerHTML = x;
-    document.getElementById('tests').innerHTML = 'yahooo';
+    document.getElementById('tests').innerHTML = event.changedTouches[0].clientX;
 
     
     
