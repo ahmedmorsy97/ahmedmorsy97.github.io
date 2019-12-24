@@ -519,9 +519,11 @@ function test(event) {
         lightColor = "rgba(255,255,255,0.75)",
         gradientSize = getWidth() > 500 ? getWidth() / 620 * 50 : 75;
 
-    x = event.pageX - this.offsetLeft;
-    y = event.pageY - this.offsetTop;
+    x = event.touches[0].clientX - this.offsetLeft;
+    y = event.touches[0].clientY - this.offsetTop;
     xy = x + " " + y;
+    
+    document.getElementById('tests2').innerHTML = xy;
 
     bgWebKit =
         "-webkit-gradient(radial, " + xy + ", 0, " + xy + ", " + gradientSize +
@@ -541,5 +543,5 @@ function test(event) {
         .css({
             background: bgMoz
         });
-
+    
 }
