@@ -23,6 +23,39 @@ $(document).ready(function () {
 
         //    var container = document.getElementById('main-wrapper');
         //    init(container, getWidth(), getHeight(), '#000');
+        
+        $('#main-wrapper').ontouchmove = function (e) {
+
+            x = e.pageX - this.offsetLeft;
+            y = e.pageY - this.offsetTop;
+            xy = x + " " + y;
+
+            bgWebKit =
+                "-webkit-gradient(radial, " + xy + ", 0, " + xy + ", " + gradientSize +
+                ", from(" + lightColor +
+                "), to(rgba(255,255,255,0.0))), " +
+                originalBGplaypen;
+
+            bgMoz =
+                "-moz-radial-gradient(" + x + "px " + y + "px 45deg, circle, " +
+                lightColor + " 0%, " + originalBGplaypen +
+                " " + gradientSize + "px)";
+
+            $(this)
+                .css({
+                    background: bgWebKit
+                })
+                .css({
+                    background: bgMoz
+                });
+
+        };
+        $('#main-wrapper').ontouchend = function () {
+            $(this).css({
+                background: originalBGplaypen
+            });
+        };
+        
 
         $('#main-wrapper').mousemove(function (e) {
 
