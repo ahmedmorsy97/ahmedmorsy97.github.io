@@ -491,8 +491,8 @@ function move(event) {
         lightColor = "rgba(255,255,255,0.75)",
         gradientSize = getWidth() > 500 ? getWidth() / 620 * 50 : 75;
 
-    x = event.changedTouches[0].clientX - this.offsetLeft;
-    y = event.changedTouches[0].clientY - this.offsetTop;
+    x = event.changedTouches[0].clientX - $('#mainMap').offsetLeft;
+    y = event.changedTouches[0].clientY - $('#mainMap').offsetTop;
     xy = x + " " + y;
 
     bgWebKit =
@@ -506,7 +506,7 @@ function move(event) {
         lightColor + " 0%, " + originalBGplaypen +
         " " + gradientSize + "px)";
 
-    $(this)
+    $('#mainMap')
         .css({
             background: bgWebKit
         })
@@ -520,8 +520,8 @@ function test(event) {
     
     event.preventDefault();
     
-    x = event.changedTouches[0].clientX - this.offsetLeft;
-    y = event.changedTouches[0].clientY - this.offsetTop;
+    x = event.changedTouches[0].clientX - $('#mainMap').offsetLeft;
+    y = event.changedTouches[0].clientY - $('#mainMap').offsetTop;
     xy = x + " " + y;
     
     document.getElementById('tests3').innerHTML = this.offsetLeft;
@@ -545,7 +545,7 @@ function test(event) {
         lightColor + " 0%, " + originalBGplaypen +
         " " + gradientSize + "px)";
 
-    $(this)
+    $('#mainMap')
         .css({
             background: bgWebKit
         })
