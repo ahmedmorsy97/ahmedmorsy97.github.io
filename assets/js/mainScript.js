@@ -1,63 +1,41 @@
 $(document).ready(function () {
 
-//    if (mobileAndTabletcheck()) {
-//        screen.orientation.lock("portrait-primary");
-//    } else {
-//        console.log("not a phone or tablet");
-//    }
+    //    if (mobileAndTabletcheck()) {
+    //        screen.orientation.lock("portrait-primary");
+    //    } else {
+    //        console.log("not a phone or tablet");
+    //    }
 
-    if(document.getElementById('test') != null) {
+    if (document.getElementById('test') != null) {
         
-        $('#mainMap').addEventListener('touchstart', function(e){
-            e.preventDefault();
+        $('#mainMap').ontouchmove = function(e) {
+            document.getElementById('tests').innerHTML = "2wel 7aga";
             
-            document.getElementById('tests2').innerHTML = e.changedTouches[0].clientX;
-            
-            document.getElementById('tests').innerHTML = 'testt start';
-            
-        });
-        
-        $('#mainMap').addEventListener('touchmove', function(e){
-            e.preventDefault();
-            
-            document.getElementById('tests2').innerHTML = e.changedTouches[0].clientX;
-            
-            document.getElementById('tests').innerHTML = 'testt mpve';
-            
-        });
-        
-        $('#mainMap').addEventListener('touchend', function(e){
-            e.preventDefault();
-            
-            document.getElementById('tests2').innerHTML = e.changedTouches[0].clientX;
-            
-            document.getElementById('tests').innerHTML = 'testt end';
-            
-        });
-        
-        $('#mainMap').addEventListener('pointermove', function(e){
-            e.preventDefault();
-            
-            document.getElementById('tests2').innerHTML = e.changedTouches[0].clientX;
-            
-            document.getElementById('tests').innerHTML = 'pointer move';
-            
-        });
-        
-        
+            document.getElementById('tests2').innerHTML = "2wel 7aga 5ales";
+        };
+
+        $('#mainMap').addEventListener('touchstart', start, false);
+
+        $('#mainMap').addEventListener('touchmove', move, false);
+
+        $('#mainMap').addEventListener('touchend', cancel, false);
+
+        $('#mainMap').addEventListener('pointermove', move, false);
+
+
         var originalBGplaypen = $("#mainMap").css("background-color"),
             x, y, xy, bgWebKit, bgMoz,
             lightColor = "rgba(255,255,255,0.75)",
             gradientSize = getWidth() > 500 ? getWidth() / 620 * 50 : 75;
         $('#mainMap').css('height', getHeight() + 'px');
         $('#mainMap').css('width', getWidth() + 'px');
-        
+
         $('#mainMap').ontouchmove = function (e) {
-            
+
             document.getElementById('tests').innerHTML = e.pageX;
-            
+
             document.getElementById('tests').innerHTML = 'testt';
-            
+
             x = e.pageX - this.offsetLeft;
             y = e.pageY - this.offsetTop;
             xy = x + " " + y;
@@ -87,7 +65,7 @@ $(document).ready(function () {
                 background: originalBGplaypen
             });
         };
-       
+
     }
 
     if (document.getElementById('main-wrapper') != null) {
@@ -105,7 +83,7 @@ $(document).ready(function () {
 
         //    var container = document.getElementById('main-wrapper');
         //    init(container, getWidth(), getHeight(), '#000');
-        
+
         $('#main-wrapper').ontouchmove = function (e) {
 
             x = e.pageX - this.offsetLeft;
@@ -137,7 +115,7 @@ $(document).ready(function () {
                 background: originalBGplaypen
             });
         };
-        
+
 
         $('#main-wrapper').mousemove(function (e) {
 
@@ -298,36 +276,36 @@ $(document).ready(function () {
     } else if (document.getElementById('mainMap') != null) {
         if (document.getElementById('notAdd') != null) {
             $('#mainMap').css('height', getHeight() + 'px');
-//            $('#mainMap').css('width', getWidth() + 'px');
+            //            $('#mainMap').css('width', getWidth() + 'px');
         } else if (document.getElementById('cont') != null) {
             // do nothing  
-//            document.querySelector('#form[data-layout-type="mobile"] div[data-role="form-footer"]').className = "hide";
-            
-//            setTimeout(function () {
-//                var footer = $('iframe')[0];
-//                console.log(footer);
-//            }, 500);
-            
-            
+            //            document.querySelector('#form[data-layout-type="mobile"] div[data-role="form-footer"]').className = "hide";
+
+            //            setTimeout(function () {
+            //                var footer = $('iframe')[0];
+            //                console.log(footer);
+            //            }, 500);
+
+
         } else {
             //            $('#mainMap').css('height', getHeight() + 50 + 'px');
-//            $('#mainMap').css('width', getWidth() + 'px');
+            //            $('#mainMap').css('width', getWidth() + 'px');
 
 
             $('#svg').css('height', getHeight() + 'px');
-//            $('#svg').css('width', getWidth() + 'px');
+            //            $('#svg').css('width', getWidth() + 'px');
 
 
             $('#svg1').css('height', getHeight() + 'px');
-//            $('#svg1').css('width', getWidth() + 'px');
+            //            $('#svg1').css('width', getWidth() + 'px');
 
 
             $('#svg2').css('height', getHeight() + 'px');
-//            $('#svg2').css('width', getWidth() + 'px');
+            //            $('#svg2').css('width', getWidth() + 'px');
 
 
             $('#svg3').css('height', getHeight() + 'px');
-//            $('#svg3').css('width', getWidth() + 'px');
+            //            $('#svg3').css('width', getWidth() + 'px');
 
             // Draw lines
             var line = $('#line');
@@ -601,3 +579,38 @@ window.addEventListener('load', function () {
 //        } // End if
 //    });
 //});
+
+
+
+function start(e) {
+    e.preventDefault();
+
+    document.getElementById('tests2').innerHTML = e.changedTouches[0].clientX;
+
+    document.getElementById('tests').innerHTML = 'testt start';
+
+}
+
+function move(e) {
+    e.preventDefault();
+
+    document.getElementById('tests2').innerHTML = e.changedTouches[0].clientX;
+
+    document.getElementById('tests').innerHTML = 'testt mpve';
+
+}
+
+function cancel(e) {
+    e.preventDefault();
+
+    document.getElementById('tests2').innerHTML = e.changedTouches[0].clientX;
+
+    document.getElementById('tests').innerHTML = 'testt cancel';
+
+}
+
+function test(event) {
+    document.getElementById('tests2').innerHTML = event.changedTouches[0].clientX;
+
+    document.getElementById('tests').innerHTML = 'test men gowa el html';
+}
