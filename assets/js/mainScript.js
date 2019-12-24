@@ -7,6 +7,23 @@ $(document).ready(function () {
 //    }
 
     if(document.getElementById('test') != null) {
+        
+        $('#mainMap').addEventListener('touchstart', function(e){
+            
+            alert(e.changedTouches[0].pageX);
+            
+            document.getElementById('tests').innerHTML = 'testt';
+            
+        }, false);
+        
+//        document.body.addEventListener('touchstart', function(e){
+//            
+//            alert(e.changedTouches[0].pageX + 'hala');
+//            
+//            document.getElementById('tests').innerHTML = 'hahaha body';
+//            
+//        }, false);
+        
         var originalBGplaypen = $("#mainMap").css("background-color"),
             x, y, xy, bgWebKit, bgMoz,
             lightColor = "rgba(255,255,255,0.75)",
